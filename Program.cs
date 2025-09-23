@@ -3,39 +3,20 @@ using Microsoft.JSInterop.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-
-app.MapGet("/Ingenting", () =>
+// read todos
+app.MapGet("/todo", () =>
 {
-    return $"Ingenting ";
-});
-app.MapGet("/greetings", (string name) =>
-{
-    if (name == "Magnus")
-    {
-        return $"Hei MAGNU$";
-    }
-    else
-    {
-        return $"Greetings: {name}";
-
-    }
+    return "returning todos ";
 });
 
-app.MapPost("/post", (string body) =>
+
+app.MapPost("/todo", () =>
 {
-    return $"Post; Path: / {body}";
+    return $"Post; Path: / ";
 
 });
 
 
-app.MapPut("/", (string body) =>
-{
-    return $"Put; Path: / {body}";
-});
 
-app.MapDelete("/delete", (string body) =>
-{
-    return $"Delete; Path: / {body}";
-});
 
 app.Run();
