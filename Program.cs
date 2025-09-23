@@ -12,7 +12,11 @@ app.MapGet("/todo", () =>
 
 app.MapPost("/todo", () =>
 {
-    return $"Post; Path: / ";
+    var NewTodoItem = new TodoItem("this is a task", DateTime.Today);
+
+
+    return NewTodoItem;
+    
 
 });
 
