@@ -3,6 +3,8 @@ using Microsoft.JSInterop.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+var todoList = new TodoList();
+
 // read todos
 app.MapGet("/todo", () =>
 {
@@ -12,7 +14,7 @@ app.MapGet("/todo", () =>
 
 app.MapPost("/todo", () =>
 {
-    var NewTodoItem = new TodoItem("this is a task", DateTime.Today);
+    var NewTodoItem = new TodoItem();
 
 
     return NewTodoItem;
